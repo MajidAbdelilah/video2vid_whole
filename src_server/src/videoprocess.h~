@@ -1,0 +1,4 @@
+#pragma once
+#include <stdbool.h>
+
+bool video_sharpness_vaapi(char *video_name, char *output_name);

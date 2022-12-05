@@ -1,0 +1,23 @@
+#include "serverd.h"
+
+
+
+bool change_video_name(http_conn_t *conn) {
+	  if (access(conn->video_info.video_name_original, F_OK) == 0) {
+		  // file exists
+		  // change name
+		  
+	   unsigned int video_name_len = strlen(conn->video_info.video_name_original);
+		  for(unsigned int i=video_name_len; i>=0; i--){
+			  conn->video_info.video_name_original[i+1] = conn->video_info.video_name_original[i];
+			  if(conn->video_info.video_name_original[i+1] == '.'){
+				  conn->video_info.video_name_original[i] = '2';
+				  change_video_name(conn);
+			  }
+		  }
+
+ 	  
+	  }else {
+		  return true;
+	  }
+}

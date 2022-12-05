@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>video2vid - mp4 تحويل الفيديو الى </title>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+<form action="http://127.0.0.1:8080/video_sharpness" enctype="multipart/form-data" method="post" id="myform">
+	<label class="custom-uploader" for="file">Upload Your File</label>
+	<input id="video_file" accept="video/*" name="video_file" type="file" />
+	<button class="btn btn-success" name="submit" type="submit"> Upload File </button>
+</form>
+
+ <script src="jquery-3.6.1.min.js"></script> 
+ <script src="test.js"></script> 
+
+</body>
+</html>
