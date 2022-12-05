@@ -15,7 +15,7 @@ PGO_GEN_FLAGS = -fprofile-generate
 PGO_USE_FLAGS = -fprofile-use 
 LDLIBS  := -lm -L./lib/ -l:libhv.a -lssl
 LDFLAGS := #-Ofast -Wall
-flags := 80 4
+flags := 9000 4
 #-Ofast -Wall
 .PHONY: all run clean
 

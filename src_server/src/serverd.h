@@ -10,8 +10,8 @@
 #include <stdbool.h>
 #include "io.h"
 
-static const char* host = "105.67.0.24";
-static int port = 8000;
+static const char* host = "0.0.0.0";
+static int port = 9000;
 static int thread_num = 4;
 static hloop_t*  accept_loop = NULL;
 static hloop_t** worker_loops = NULL;

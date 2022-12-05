@@ -22,7 +22,7 @@ $('#myform').submit(function(e){
 		//this.files[0].size gets the size of your file.
 	//	alert($('#video_file')[0].files[0].size);
 		if($('#video_file')[0].files[0].size>100000000){
-			e.preventDefault();
+			//e.preventDefault();
 		}
 	
 	

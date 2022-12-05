@@ -264,6 +264,17 @@ static int on_request(http_conn_t *conn) {
              conn->video_info.video_name_original);
       change_video_name(conn->video_info.video_name_final);
 
+		for(unsigned int i=strlen(conn->video_info.video_name_final)-1; i>=0; i--){
+			if(conn->video_info.video_name_final[i] == '.'){
+				conn->video_info.video_name_final[i+1] ='m';
+				conn->video_info.video_name_final[i+2] ='p';
+				conn->video_info.video_name_final[i+3] ='4';	
+				break;											
+			}
+			conn->video_info.video_name_final[i] =' ';
+							
+		}
+		
       if(video_sharpness_vaapi(conn, conn->video_info.video_name_original,
 							   conn->video_info.video_name_final)){
 		  http_serve_file(conn, conn->video_info.video_name_final);
