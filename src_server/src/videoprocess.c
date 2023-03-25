@@ -16,8 +16,8 @@ bool video_sharpness_vaapi(http_conn_t *conn, char *video_name, char *output_nam
 	
 	
 	//snprintf(command, sizeof(command), "ffmpeg %s %s %s -i %s -vf '%s,%s' -c:v h264_vaapi %s", "-hwaccel vaapi", "-hwaccel_output_format vaapi", "-vaapi_device /dev/dri/renderD128", video_name, "hwupload", "sharpness_vaapi", output_name);
-
-	snprintf(command, sizeof(command), "ffmpeg -i %s -c:v libx264 %s", video_name, output_name);
+	output_name[strlen(output_name)-1] = '\0';
+	snprintf(command, sizeof(command), "ffmpeg -i '%s' -c:v copy '%s'", video_name, output_name);
 
 	
 	return system(command) == 0;
